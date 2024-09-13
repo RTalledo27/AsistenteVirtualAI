@@ -1,0 +1,59 @@
+.sideBar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    padding: 10px; /* Add padding around the sidebar */
+    background-color: #243B55; /* Background color to match the image */
+    height: 100vh; /* Full height */
+}
+
+.sideBar-item {
+    width: 100%; /* Full width */
+}
+
+.logo-universidad {
+    display: flex;
+    justify-content: center; /* Center the logo */
+    margin-bottom: 20px; /* Add space below the logo */
+}
+
+.logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+hr {
+    width: 100%;
+    border: 1px solid #ffffff; /* White border for separation */
+    margin-bottom: 20px; /* Space between hr and next section */
+}
+
+.historial-consultas {
+    width: 100%;
+}
+
+.historial {
+    color: #ffffff; /* White text color */
+    margin-bottom: 20px; /* Add space below the title */
+}
+
+.historial span{
+    text-align: center;
+    display: block; /* Center the text */
+    gap: 10px; /* Space between the text and the icon */
+}
+
+.consultas {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Space between each 'consulta' */
+}
+
+.consultas div {
+    background-color: #364f6b; /* Background color for each 'consulta' */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    text-align: center; /* Center the text */
+    color: #ffffff; /* White text color */
+    cursor: pointer;
+}
