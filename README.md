@@ -19,4 +19,4 @@ Este proyecto tiene como objetivo desarrollar un asistente virtual capaz de [des
 ## Instrucciones de Instalación
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://https://github.com/RTalledo27/asistenteVirtual.git
+   git clone https://https://github.com/RTalledo27/AsistenteVirtualAI.git
