@@ -1,0 +1,52 @@
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Espacio entre los mensajes */
+  width: 100%;
+  padding: 10px;
+}
+
+.message {
+  max-width: 70%; /* Limita el ancho máximo para que los mensajes no sean demasiado largos */
+  padding: 10px;
+  border-radius: 8px;
+  margin: 5px 0;
+  word-wrap: break-word; /* Permite que el texto se divida en líneas si es necesario */
+  word-break: break-word; /* Evita que las palabras largas se desborden */
+}
+
+.prompt, .response {
+  display: inline-block;
+  width: auto;
+  min-width: 50px; /* Asegura un tamaño mínimo razonable */
+  max-width: 100%; /* Asegura que no se desborde del contenedor padre */
+  background-color: inherit;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 14px;
+  color: white; /* Color de texto */
+}
+
+.prompt {
+  background-color: #1e90ff; /* Mensajes del usuario */
+}
+
+.response {
+  background-color: #2e8b57; /* Respuestas del chatbot */
+}
+
+.right {
+  align-self: flex-end;
+}
+
+.left {
+  align-self: flex-start;
+}
+
+.message.right .prompt {
+  text-align: right;
+}
+
+.message.left .response {
+  text-align: left;
+}

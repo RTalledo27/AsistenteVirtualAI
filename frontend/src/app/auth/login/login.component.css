@@ -1,0 +1,32 @@
+app-login {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh; /* Para asegurar que ocupe toda la pantalla */
+  width: 100%; /* Para asegurar que ocupe toda la pantalla */
+}
+
+app-background {
+  flex: 3; /* Aumenta el tamaño de esta parte a 3/4 del espacio */
+  background-color: #f0f0f0; /* Color de fondo para visualizarlo mejor */
+  background-size: cover; /* Ajusta el tamaño de la imagen al contenedor */
+  background-position: center; /* Centra la imagen dentro del contenedor */
+}
+
+app-form {
+  flex: 2; /* El formulario ocupa 1/4 del espacio */
+  padding: 20px;
+  background-color: #fff; /* Fondo blanco para el formulario */
+  display: flex;
+  justify-content: center; /* Centrar el formulario horizontalmente */
+  align-items: center; /* Centrar el formulario verticalmente */
+  width: 100%;
+  flex-direction: column;
+}

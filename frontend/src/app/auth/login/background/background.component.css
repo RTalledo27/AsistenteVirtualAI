@@ -1,0 +1,15 @@
+.background{
+  background-size: cover;
+  background-position: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px);
+  z-index: 0;
+}
+
+.imgBg{
+  width: 100%;
+  height: 100vh;
+}
