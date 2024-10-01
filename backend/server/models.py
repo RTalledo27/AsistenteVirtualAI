@@ -6,6 +6,7 @@ from rest_framework.authentication import BaseAuthentication
 from rest_framework.exceptions import AuthenticationFailed
 
 from django.db import models
+#### Modelos para la Universidad ####
 
 # Facultad model
 class Facultad(models.Model):
@@ -24,6 +25,48 @@ class Carrera(models.Model):
 
     def __str__(self):
         return self.nombre_carrera
+
+# PlanEstudio model
+class PlanEstudio(models.Model):
+    id_carrera = models.ForeignKey(Carrera, on_delete=models.CASCADE)
+    nombre_plan = models.CharField(max_length=255)
+    descripcion = models.TextField()
+
+    def __str__(self):
+        return f"Plan de Estudio: {self.nombre_plan} - {self.id_carrera.nombre_carrera}"
+
+# Curso model
+class Curso(models.Model):
+    nombre_curso = models.CharField(max_length=255)
+    descripcion = models.TextField()
+    creditos = models.DecimalField(max_digits=10, decimal_places=2)
+    TIPO_CURSO_CHOICES = [
+        ('obligatorio', 'Obligatorio'),
+        ('optativo', 'Optativo'),
+    ]
+    tipo_curso = models.CharField(max_length=12, choices=TIPO_CURSO_CHOICES)
+
+    MODALIDAD_CHOICES = [
+        ('presencial', 'Presencial'),
+        ('virtual', 'Virtual'),
+        ('híbrido', 'Híbrido'),
+    ]
+    modalidad = models.CharField(max_length=255, choices=MODALIDAD_CHOICES)
+
+    def __str__(self):
+        return self.nombre_curso
+
+# PlanEstudioCurso model
+class PlanEstudioCurso(models.Model):
+    id_plan_estudio = models.ForeignKey(PlanEstudio, on_delete=models.CASCADE)
+    id_curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    ciclo = models.IntegerField()  # Indica en qué ciclo se debe tomar el curso
+    semestre = models.IntegerField()  # Indica en qué semestre se debe tomar el curso
+
+    def __str__(self):
+        return f"{self.id_plan_estudio.nombre_plan} - {self.id_curso.nombre_curso} (Ciclo {self.ciclo}, Semestre {self.semestre})"
+
+#### Modelos para el Estudiante ####
 
 # Estudiante model
 class Estudiante(models.Model):
@@ -70,8 +113,7 @@ class Estudiante(models.Model):
     
     def __str__(self):
         return f"{self.nombres} {self.apellidos}"
-    
-    
+
 class EstudianteToken(models.Model):
     estudiante = models.OneToOneField(Estudiante, on_delete=models.CASCADE)
     key = models.CharField(max_length=40, unique=True)
@@ -82,7 +124,7 @@ class EstudianteToken(models.Model):
         super().save(*args, **kwargs)
     
 class EstudianteTokenAuthentication(BaseAuthentication):
-   def authenticate(self, request):
+    def authenticate(self, request):
         # Obtener el token del encabezado 'Authorization'
         auth_header = request.headers.get('Authorization')
         if not auth_header:
@@ -103,55 +145,16 @@ class EstudianteTokenAuthentication(BaseAuthentication):
         # Retornar el estudiante asociado al token
         return (token.estudiante, None)
 
-# Curso model
-class Curso(models.Model):
-    nombre_curso = models.CharField(max_length=255)
-    descripcion = models.TextField()
-    creditos = models.DecimalField(max_digits=10, decimal_places=2)
-    semestre = models.IntegerField()
-    requisitos = models.IntegerField()  # Puede representar el número de requisitos o una relación futura
-    TIPO_CURSO_CHOICES = [
-        ('obligatorio', 'Obligatorio'),
-        ('optativo', 'Optativo'),
-    ]
-    tipo_curso = models.CharField(max_length=12, choices=TIPO_CURSO_CHOICES)
-
-    MODALIDAD_CHOICES = [
-        ('presencial', 'Presencial'),
-        ('virtual', 'Virtual'),
-        ('híbrido', 'Híbrido'),
-    ]
-    
-
-    modalidad = models.CharField(max_length=255,choices=MODALIDAD_CHOICES)
-
-    def __str__(self):
-        return self.nombre_curso
-
-# Malla Curricular model
-class MallaCurricular(models.Model):
-    id_curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"Malla Curricular para {self.id_curso.nombre_curso}"
-
-# Mallas Curriculares Cursos model
-class MallasCurricularesCursos(models.Model):
-    id_malla_curricular = models.ForeignKey(MallaCurricular, on_delete=models.CASCADE)
-    id_curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
-
-    def __str__(self):
-        return f"{self.id_curso.nombre_curso} en {self.id_malla_curricular}"
-
 # Matricula model
 class Matricula(models.Model):
     id_estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
-    id_curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
-    nota = models.DecimalField(max_digits=10, decimal_places=2)
+    id_plan_estudio_curso = models.ForeignKey(PlanEstudioCurso, on_delete=models.CASCADE)  # Relaciona con la tabla intermedia
+    ciclo = models.IntegerField()
+    semestre = models.IntegerField()
     estado = models.CharField(max_length=255)
 
     def __str__(self):
-        return f"Matricula de {self.id_estudiante.nombres} en {self.id_curso.nombre_curso}"
+        return f"Matricula de {self.id_estudiante.nombres} en {self.id_plan_estudio_curso.id_curso.nombre_curso} (Ciclo {self.ciclo}, Semestre {self.semestre})"
 
 # Historial Academico model
 class HistorialAcademico(models.Model):
@@ -171,3 +174,45 @@ class RequisitosPrevios(models.Model):
 
     def __str__(self):
         return f"Requisito {self.id_curso_requisito.nombre_curso} para {self.id_curso.nombre_curso}"
+
+#### Modelos para la Gestión Administrativa ####
+
+# Horario model
+class Horario(models.Model):
+    curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
+    dia_semana = models.CharField(max_length=9, choices=[
+        ('Lunes', 'Lunes'),
+        ('Martes', 'Martes'),
+        ('Miércoles', 'Miércoles'),
+        ('Jueves', 'Jueves'),
+        ('Viernes', 'Viernes'),
+        ('Sábado', 'Sábado'),
+        ('Domingo', 'Domingo'),
+    ])
+    hora_inicio = models.TimeField()
+    hora_fin = models.TimeField()
+
+    def __str__(self):
+        return f"{self.curso.nombre_curso} - {self.dia_semana} {self.hora_inicio}-{self.hora_fin}"
+
+# Pago model
+class Pago(models.Model):
+    ESTADO_CHOICES = [
+        ('pendiente', 'Pendiente'),
+        ('pagado', 'Pagado'),
+        ('vencido', 'Vencido')
+    ]
+    TIPO_PAGO_CHOICES = [
+        ('matricula', 'Matrícula'),
+        ('pension', 'Pensión'),
+        ('otros', 'Otros')
+    ]
+    estudiante = models.ForeignKey(Estudiante, on_delete=models.CASCADE)
+    tipo_pago = models.CharField(max_length=50, choices=TIPO_PAGO_CHOICES)
+    monto = models.DecimalField(max_digits=10, decimal_places=2)
+    fecha_vencimiento = models.DateField()
+    fecha_pago = models.DateField(null=True, blank=True)
+    estado = models.CharField(max_length=50, choices=ESTADO_CHOICES)
+
+    def __str__(self):
+        return f"Pago de {self.estudiante.nombres} {self.estudiante.apellidos} - {self.tipo_pago}"
