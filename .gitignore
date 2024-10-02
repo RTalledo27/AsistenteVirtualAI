@@ -45,6 +45,9 @@ backend/.env
 backend/static/
 backend/media/
 backend/*.log
+__pycache__/
+*.pyc
+
 
 # Frontend (Angular)
 frontend/node_modules/
