@@ -1,6 +1,6 @@
- # serializers.py
+# serializers.py
 from rest_framework import serializers
-from .models import Estudiante, Facultad, Carrera, MallaCurricular, Curso, Matricula, HistorialAcademico, RequisitosPrevios
+from .models import Estudiante, Facultad, Carrera, PlanEstudio, Curso, Matricula, HistorialAcademico, RequisitosPrevios, PlanEstudioCurso
 
 class EstudiantesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -17,9 +17,9 @@ class CarrerasSerializer(serializers.ModelSerializer):
         model = Carrera
         fields = '__all__'
 
-class MallaCurricularSerializer(serializers.ModelSerializer):
+class PlanEstudioSerializer(serializers.ModelSerializer):
     class Meta:
-        model = MallaCurricular
+        model = PlanEstudio
         fields = '__all__'
 
 class CursosSerializer(serializers.ModelSerializer):
@@ -40,4 +40,9 @@ class HistorialAcademicoSerializer(serializers.ModelSerializer):
 class RequisitosPreviosSerializer(serializers.ModelSerializer):
     class Meta:
         model = RequisitosPrevios
+        fields = '__all__'
+
+class PlanEstudioCursoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PlanEstudioCurso
         fields = '__all__'
