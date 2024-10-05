@@ -17,9 +17,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, re_path
 from . import  views
+from .views import chatbot
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('login',views.login),
-    re_path('getData',views.getData)
+    re_path('getData',views.getData),
+    re_path('chatbot', chatbot, name='chatbot'),
+
 ]

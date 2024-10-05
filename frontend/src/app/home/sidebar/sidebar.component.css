@@ -1,59 +1,56 @@
-.sideBar-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    padding: 10px; /* Add padding around the sidebar */
-    background-color: #243B55; /* Background color to match the image */
-    height: 100vh; /* Full height */
+.sidebar {
+  width: 300px;
+  background-color: #2c3e50;
+  color: #ecf0f1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
-
-.sideBar-item {
-    width: 100%; /* Full width */
+.logo-container {
+  margin-bottom: 20px;
 }
-
-.logo-universidad {
-    display: flex;
-    justify-content: center; /* Center the logo */
-    margin-bottom: 20px; /* Add space below the logo */
+.logo {
+  width: 100%;
+  border-radius: 5px;
 }
-
-.logo img {
-    max-width: 100%;
-    height: auto;
+.search-container {
+  margin-bottom: 20px;
 }
-
-hr {
-    width: 100%;
-    border: 1px solid #ffffff; /* White border for separation */
-    margin-bottom: 20px; /* Space between hr and next section */
+.search-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ecf0f1;
 }
-
-.historial-consultas {
-    width: 100%;
+.chat-history {
+  flex-grow: 1;
+  overflow-y: auto;
 }
-
-.historial {
-    color: #ffffff; /* White text color */
-    margin-bottom: 20px; /* Add space below the title */
+.chat-history h2 {
+  margin-bottom: 10px;
+  font-size: 18px;
 }
-
-.historial span{
-    text-align: center;
-    display: block; /* Center the text */
-    gap: 10px; /* Space between the text and the icon */
+.history-item {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
-
-.consultas {
-    display: flex;
-    flex-direction: column;
-    gap: 10px; /* Space between each 'consulta' */
+.history-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
-
-.consultas div {
-    background-color: #364f6b; /* Background color for each 'consulta' */
-    padding: 10px;
-    border-radius: 5px; /* Rounded corners */
-    text-align: center; /* Center the text */
-    color: #ffffff; /* White text color */
-    cursor: pointer;
+.message-preview {
+  font-size: 14px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.message-meta {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.6);
 }

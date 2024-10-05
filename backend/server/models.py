@@ -61,7 +61,7 @@ class PlanEstudioCurso(models.Model):
     id_plan_estudio = models.ForeignKey(PlanEstudio, on_delete=models.CASCADE)
     id_curso = models.ForeignKey(Curso, on_delete=models.CASCADE)
     ciclo = models.IntegerField()  # Indica en qué ciclo se debe tomar el curso
-    semestre = models.IntegerField()  # Indica en qué semestre se debe tomar el curso
+    semestre = models.IntegerField(default=1)  # Indica en qué semestre se debe tomar el curso
 
     def __str__(self):
         return f"{self.id_plan_estudio.nombre_plan} - {self.id_curso.nombre_curso} (Ciclo {self.ciclo}, Semestre {self.semestre})"

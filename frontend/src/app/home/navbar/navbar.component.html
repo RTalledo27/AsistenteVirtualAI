@@ -1,3 +1,32 @@
+<header class="navbar">
+  <div class="student-code">
+    <i class="material-icons">message</i>
+    Código de Estudiante: E12345
+  </div>
+  <div class="user-actions">
+    <button class="icon-button notification-button">
+      <i class="material-icons">notifications</i>
+     <!-- <span class="notification-badge" *ngIf="notifications > 0">{{  }}</span>  -->
+     <span class="notification-badge"></span>
+    </button>
+
+
+
+     <!--   -->
+
+    <div class="user-menu">
+      <img src="../../../assets/img/userPhoto.jpg" alt="Logo" class="user-avatar">
+      <div class="user-menu-content">
+        <a href="#" class="menu-item"><i class="material-icons">person</i> Perfil</a>
+        <a href="#" class="menu-item"><i class="material-icons">settings</i> Ajustes</a>
+        <a href="#" class="menu-item"><i class="material-icons">help</i> Ayuda</a>
+        <div  class="menu-item logout" (click)="logout()"><i class="material-icons">exit_to_app</i> Cerrar sesión</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!--
 <div #[@load]# class="container-navbar">
     <div class="nav-item">
         <div class="datos-estudiante">
@@ -12,3 +41,4 @@
 
     </div>
 </div>
+-->
