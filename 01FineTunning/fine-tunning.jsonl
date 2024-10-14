@@ -1,0 +1,115 @@
+[
+    
+    {"role": "system", "content": "Eres un asistente educativo que ayuda a los estudiantes con información de la universidad."},
+    {"role": "user", "content": ""},
+    {"role": "assistant", "content": ""},
+    
+    {"role": "user", "content": "Hola, ¿cómo estás?"},
+    {"role": "assistant", "content": "Estoy bien, gracias por preguntar. ¿En qué puedo ayudarte?"},
+    
+    {"role": "user", "content": "Quiero saber cómo me puedo inscribir en la universidad."},
+    {"role": "assistant", "content": "Puedes inscribirte en la universidad a través del sitio web oficial. Completa el formulario de inscripción y recibirás un correo electrónico con detalles adicionales sobre el proceso. Si tienes alguna duda, ¡estoy aquí para ayudarte!"},
+    
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+    
+    {"role": "user", "content": "Hola, quiero saber cuáles son los cursos que me faltan llevar."},
+    {"role": "assistant", "content": "Claro, los cursos que te faltan según tu plan de estudios son los siguientes:\n- Ingeniería Informática\n- Ingeniería de Software\n- Ingeniería de Computadoras\n- Ingeniería de Telecomunicaciones\n- Ingeniería de Materiales\n- Ingeniería Biomédica\n- Ingeniería Física\n- Ingeniería Electrónica\n- Ingeniería Civil\n- Ingeniería Mecánica\n- Ingeniería Naval\n- Ingeniería Aeroespacial\n- Ingeniería Industrial\n- Ingeniería Minera"},
+    
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role": "user", "content": "¿Qué horarios tiene la universidad para atención de estudiantes?"},
+    {"role": "assistant", "content": "La universidad atiende a los estudiantes de lunes a viernes, de 9:00 a 18:00 horas. Si necesitas más información, no dudes en preguntar."},
+    
+    {"role": "user", "content": "¿Cómo puedo inscribirme en el curso de Inglés?"},
+    {"role": "assistant", "content": "Para inscribirte en el curso de Inglés, sigue estos pasos:\n1. Accede al sitio web oficial de la universidad (trilce.ucv.edu.pe)\n2. Ubica la sección 'PRE-INSCRIPCIÓN CENTROS EMPRESARIALES'\n3. Selecciona 'CID'\n4. Se mostrará la opción 'DIRECTIVA INGLÉS PREGRADO VIRTUAL NOVIEMBRE 2024'\n5. Lee el documento y selecciona 'HE LEÍDO Y ACEPTO' si estás de acuerdo\n6. Verifica los horarios y escoge el que mejor te convenga\n7. Realiza el pago para confirmar tu inscripción\n8. Si necesitas ayuda adicional, no dudes en preguntar."},
+    
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role": "user", "content": "Quiero saber cómo me puedo inscribir en el curso de Cómputo."},
+    {"role": "assistant", "content": "Para inscribirte en el curso de Cómputo, sigue los mismos pasos que para el curso de Inglés, pero selecciona la opción 'DIRECTIVA CÓMPUTO PREGRADO VIRTUAL NOVIEMBRE 2024'. Si tienes alguna duda, ¡pregúntame!"},
+    
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role": "user", "content": "¿Existen vacantes para los cursos de Cómputo e Inglés?"},
+    {"role": "assistant", "content": "Sí, hay vacantes disponibles para ambos cursos. Si necesitas ayuda adicional, no dudes en preguntar."},
+
+    {"role": "user", "content": "Que."},
+
+    {"role": "user", "content": "¿Existen vacantes para los cursos de Cómputo e Inglés?"},
+    {"role":"assistant", "content": "Lamentablemente, no hay vacantes para los cursos de Cómputo ni Inglés en este momento. Te recomiendo revisar más adelante o contactar al departamento académico. ¿Te puedo ayudar con otra cosa?"},
+
+    {"role": "user", "content": "¿Cuánto tengo de notas en el curso de Programación?"},
+    {"role": "assistant", "content": "¡Felicidades! Tienes una nota de 18 en el curso de Programación. Si necesitas más información, no dudes en preguntar."},
+
+    {"role": "user", "content": "¿Cuánto tengo de notas en el curso de Programación?"},
+    {"role": "assistant", "content":"Actualmente no hay notas registradas para el curso de Programación, es posible que el docente aún no las haya subido. Te sugiero verificar más tarde o contactar al profesor para más información."}
+
+    
+
+    {"role":"user","content":"¿Cuándo es la fecha limite para pagar la matricula?"},
+    {"role":"assistant","content":"La fecha límite para pagar la matricula es el 31 de diciembre de 2024. Asegúrate de realizar el pago antes de la fecha mencionada para evitar cargos adicionales. Si necesitas más información, no dudes en preguntar."},
+
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role":"user","content":"¿Dónde puedo ver mis horarios de clases?"},
+    {"role":"assistant","content":"Puedes consultarme a mi sobre tus horarios de clase, tambien puedes ver tus horarios ingresando al portal de la universidad(trilce.ucv.edu.pe), luego dirigete a Mis asignaturas - asignaturas matriculadas, aqui podras seleccionar el curso y ver los horarios y demas informacion del curso en mencion  , no dudes en preguntar."},
+
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role": "user", "content": "¿Dónde puedo acceder a la biblioteca virtual?"},
+    {"role": "assistant", "content": "Puedes acceder a la biblioteca virtual en el sitio web oficial de la universidad (trilce.ucv.edu.pe), luego dirigete a la sección Servicios Varios - Biblioteca, aquí encontraras una serie de instrucciones para poder acceder a los recursos disponibles que ofrece la biblioteca virtual, si cuentas con alguna consulta adicional no dudes en preguntar."},
+
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role": "user", "content": "¿Cuándo son los examenes de los cursos?"},
+    {"role": "assistant", "content": "Los examenes de los cursos estan debinidos en las siguientes semanas:\n Unidad 1: Examen parcial - Semana 5\n Unidad 2: Examen parcial - semana 10\n Unidad 3: Examen Final - semana 15.\n Recuerda, esta informacion puedes encontrarla en el silabo de cada curso. Si necesitas más información, no dudes en preguntar."},
+
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role": "user", "content": "¿Cómo solicito un certificado de estudios?"},
+    {"role": "assistant", "content": "Para solicitar un certificado de estudios, sigue estos pasos:\n1. Accede al sitio web oficial de la universidad (trilce.ucv.edu.pe)\n2. Dirigete a la seccion Pagina personal - Mis solicitudes\n4. Se mostrará un listado de todas las solicitudes recientes\n5. Selecciona la solicitud que deseas realziar en este caso en particular - selecciona la escuela, solicitud de tramite: certificado de estudio\n6. Verifica los detalles de la solicitud y selecci\n7. Espera a que se procese tu solicitud\n9. Si necesitas ayuda adicional, no dudes en preguntar."},
+
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role":"user","content":"Tengo problemas para acceder al portal de la universidad, ¿qué puedo hacer?"},
+    {"role":"assistant","content":"Si tienes problemas para acceder al portal, te recomiendo intentar recuperar tu contraseña o contactar al soporte técnico de la universidad en soporte@universidad.com. Si necesitas más ayuda, avísame."},
+
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role":"user","content": "¿Quién es el profesor del curso de Matemáticas?"},
+    {"role":"assistant","content":"El profesor encargado del curso de Matemáticas es el Dr. Juan Pérez. Puedes contactarlo a través del portal en la sección de 'Mensajes' si tienes alguna pregunta o inquietud."},
+
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role": "user","content": "¿Hay clubes o actividades extracurriculares en la universidad?"},
+    {"role": "assistant","content": "Sí, la universidad ofrece una variedad de actividades extracurriculares como deportes, clubes de debate, música, y voluntariado. Puedes inscribirte a través del portal o preguntar en el área de Bienestar Estudiantil."},
+
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role": "user", "content": "¿Cómo puedo hacer un pago en línea?"},
+    {"role":"assistant", "content":"Puedes hacer tus pagos en línea accediendo al portal de la universidad, en la sección de 'Pagos'-'Pago de servicios', luego podras visualizar un apartado de Prevencion del Robo y fraude, aqui verificaras tus datos para luego acceder al listado de pagos dando click al boton validar. Asegúrate de tener tu tarjeta o los datos bancarios listos. Si necesitas asistencia con el proceso, no dudes en preguntar."},
+
+    {"role": "user", "content": "Gracias"},
+    {"role": "assistant", "content": "De nada, ¡siempre estoy aquí para ayudarte!"},
+
+    {"role": "user", "content": "¿Cuánto cuesta el curso de Cómputo?"},
+    {"role": "assistant", "content": "El costo del curso depende la carrera, en este caso, siendo Ingenieria de sistemas la carrera, el curso de Cómputo esta teniendo el costo de S/350. Si necesitas más información, no dudes en preguntar."},
+
+    {"role": "user", "content": "¿Cuánto cuesta el curso de Inglés?"},
+    {"role": "assistant", "content": "El costo del curso de ingles es de S/150. Si necesitas más información, no dudes en preguntar."},
+
+    
+
+]
