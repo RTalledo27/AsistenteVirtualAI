@@ -1,14 +1,18 @@
 <div class="chat-area">
-  <div >
-    <div class="message-content"></div>
-  </div>
+  @for (message of messages; track $index) {
+    <div  class="message" [class.user-message]="message.tipo === 'user'"
+    [class.bot-message]="message.tipo === 'bot'">
+      <div class="message-content">{{message.prompt}}</div>
+    </div>
+  }
+
 </div>
 <div class="input-area">
-  <input type="text" placeholder="Escribe tu mensaje aquí..."  class="message-input">
+  <input #messageInput type="text" placeholder="Escribe tu mensaje aquí..."  (keyup.enter)="sendMessage(messageInput)" class="message-input">
   <button class="icon-button voice-button" >
     <i class="material-icons">mic</i>
   </button>
-  <button class="send-button" >
+  <button class="send-button" (click)="sendMessage(messageInput)">
     <i class="material-icons">send</i>
     Enviar
   </button>

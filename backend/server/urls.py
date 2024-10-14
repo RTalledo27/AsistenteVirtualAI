@@ -18,11 +18,21 @@ from django.contrib import admin
 from django.urls import path, re_path
 from . import  views
 from .views import chatbot
+from .views import Conversacion
+from .views import conversacionCreate
+from .views import mensajeCreate
+from .views import getConversations
+from .views import getMessages
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     re_path('login',views.login),
     re_path('getData',views.getData),
     re_path('chatbot', chatbot, name='chatbot'),
-
+    re_path('saveMessages', Conversacion, name='conversaciones'),
+    re_path('conversationCreate', conversacionCreate, name='conversacionCreate'),
+    re_path('mensajeCreate', mensajeCreate, name='mensajeCreate'),
+    re_path('getConversations', getConversations, name='getConversations'),
+    re_path('getMessages', getMessages, name='getMessages'),
 ]

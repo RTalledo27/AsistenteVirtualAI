@@ -1,6 +1,6 @@
 # serializers.py
 from rest_framework import serializers
-from .models import Estudiante, Facultad, Carrera, PlanEstudio, Curso, Matricula, HistorialAcademico, RequisitosPrevios, PlanEstudioCurso
+from .models import Estudiante, Facultad, Carrera, PlanEstudio, Curso, Matricula, HistorialAcademico, RequisitosPrevios, PlanEstudioCurso, Mensaje, Conversacion
 
 class EstudiantesSerializer(serializers.ModelSerializer):
     class Meta:
@@ -45,4 +45,16 @@ class RequisitosPreviosSerializer(serializers.ModelSerializer):
 class PlanEstudioCursoSerializer(serializers.ModelSerializer):
     class Meta:
         model = PlanEstudioCurso
+        fields = '__all__'
+
+class MensajeSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Mensaje
+        fields ='__all__' 
+
+class ConversacionSerializer(serializers.ModelSerializer):
+    mensajes = MensajeSerializer(many=True, read_only=True)
+
+    class Meta:
+        model = Conversacion
         fields = '__all__'

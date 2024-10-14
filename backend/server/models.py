@@ -216,3 +216,30 @@ class Pago(models.Model):
 
     def __str__(self):
         return f"Pago de {self.estudiante.nombres} {self.estudiante.apellidos} - {self.tipo_pago}"
+    
+
+    ##GUARDADO DE HISTORIAL DE CONVERSACIONES
+class Conversacion(models.Model):
+    fecha_inicio = models.DateTimeField(auto_now_add=True)
+    estudiante = models.ForeignKey('Estudiante', on_delete=models.CASCADE, related_name='conversaciones')
+
+    def __str__(self):
+        return f"Conversación ID: {self.estudiante.id} - Iniciada en {self.fecha_inicio}"  # Use self.id---+
+
+
+class Mensaje(models.Model):
+    TIPO_CHOICES = [
+        ('user', 'Usuario'),
+        ('bot', 'Bot'),
+    ]
+
+    conversacion = models.ForeignKey(Conversacion, related_name='mensajes', on_delete=models.CASCADE)  # Relación con la conversación
+    prompt = models.TextField()  # El contenido del mensaje
+    tipo = models.CharField(max_length=10, choices=TIPO_CHOICES)  # Quién envió el mensaje (bot o usuario)
+    fecha_hora = models.DateTimeField(auto_now_add=True)  # Fecha y hora del mensaje
+
+    def __str__(self):
+        return f"{self.tipo.capitalize()} dijo: {self.prompt[:50]}... a las {self.fecha_hora}"
+    
+
+#### Modelos para la Gestión Administrativa ####
